@@ -16,6 +16,7 @@ namespace GamerHQ_Services
             var entity =
                 new User()
                 {
+                    
                     Name = model.Name,
                     GamerTag = model.GamerTag,
                     Email = model.Email,
@@ -38,6 +39,7 @@ namespace GamerHQ_Services
                         e =>
                         new UserListItem
                         {
+                            UserID = e.UserID,
                             Name = e.Name,
                             GamerTag = e.GamerTag,
                             Email = e.Email,
@@ -51,7 +53,7 @@ namespace GamerHQ_Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                User entity =
+                var entity =
                     ctx
                     .UsersInfo
                     .Single(e => e.UserID == id);
@@ -74,7 +76,7 @@ namespace GamerHQ_Services
                     ctx
                     .UsersInfo
                     .Single(e => e.UserID == model.UserID);
-
+                entity.UserID = model.UserID;
                 entity.Name = model.Name;
                 entity.GamerTag = model.GamerTag;
                 entity.Email = model.Email;

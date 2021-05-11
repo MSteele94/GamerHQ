@@ -9,7 +9,6 @@ namespace GamerHQ_Models.UserModels
 {
     public class UserCreate
     {
-        public int UserID { get; set; }
         public string Name { get; set; }
         [Required]
         public string GamerTag { get; set; }
