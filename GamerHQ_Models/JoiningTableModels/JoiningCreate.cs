@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GamerHQ_Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,9 @@ namespace GamerHQ_Models.JoiningTableModels
 {
     public class JoiningCreate
     {
+        public int ID { get; set; }
+
+        public virtual User Users { get; set; }
+        public virtual Game Games { get; set; }
     }
 }

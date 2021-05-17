@@ -10,7 +10,7 @@ namespace GamerHQ_Data
 {
     public class Game
     {
-        public enum GameRating { Everyone, Teen, Mature }
+        //public enum GameRating { Everyone, Teen, Mature }
 
         [Key]
         public int GameID { get; set; }

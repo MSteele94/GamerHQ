@@ -11,11 +11,12 @@ namespace GamerHQ_Models.GameModels
 {
     public class GameDetail
     {
+        public int GameID { get; set; }
         public string GameName { get; set; }
-        public GameRating GameRating { get; set; }
+        //public GameRating GameRating { get; set; }
 
-        public ICollection<Game> Games { get; set; }
-        public DateTimeOffset CreatedUtc { get; set; }
+       // public ICollection<Game> Games { get; set; }
         public virtual ICollection<UserListItem> UserListItems { get; set; }
+        public DateTimeOffset CreatedUtc { get; set; }
     }
 }

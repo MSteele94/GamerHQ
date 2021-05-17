@@ -62,7 +62,8 @@ namespace GamerHQ.Controllers
                     Name = detail.Name,
                     GamerTag = detail.GamerTag,
                     Email = detail.Email,
-                    Age = detail.Age
+                    Age = detail.Age,
+                    WantsCrossplay = detail.WantsCrossplay
                 };
             return View(model);
         }

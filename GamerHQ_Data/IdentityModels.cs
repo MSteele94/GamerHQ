@@ -35,7 +35,6 @@ namespace GamerHQ.Data
         }
 
         public DbSet<User> UsersInfo { get; set; }
-        public DbSet<Platform> Platforms { get; set; }
         public DbSet<Game> Games { get; set; }
         public DbSet<JoiningTable> JoiningTables { get; set; }
 

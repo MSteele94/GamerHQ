@@ -1,11 +1,13 @@
 ﻿using GamerHQ.Data;
 using GamerHQ_Data;
+using GamerHQ_Models.GameModels;
 using GamerHQ_Models.UserModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static GamerHQ_Data.User;
 
 namespace GamerHQ_Services
 {
@@ -16,11 +18,14 @@ namespace GamerHQ_Services
             var entity =
                 new User()
                 {
-                    
+                    //Need to add PlatformType Enum and GameListItem ICollection to user class/ implement them into this method somehow
                     Name = model.Name,
                     GamerTag = model.GamerTag,
                     Email = model.Email,
                     Age = model.Age,
+                    
+                    //PlatformType = model.PlatformTypes
+                    
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -44,6 +49,7 @@ namespace GamerHQ_Services
                             GamerTag = e.GamerTag,
                             Email = e.Email,
                             Age = e.Age,
+                            WantsCrossplay = e.WantsCrossplay
                         }
                         );
                 return query.ToArray();
@@ -57,6 +63,16 @@ namespace GamerHQ_Services
                     ctx
                     .UsersInfo
                     .Single(e => e.UserID == id);
+                List<GameListItem> gameList = new List<GameListItem>();
+                foreach (var game in entity.JoiningTables)
+                {
+                    var gameListItem = new GameListItem()
+                    {
+                        GameID = game.Game.GameID,
+                        GameName = game.Game.GameName
+                    };
+                    gameList.Add(gameListItem);
+                }
                 return
                 new UserDetail
                 {
@@ -64,7 +80,8 @@ namespace GamerHQ_Services
                     Name = entity.Name,
                     GamerTag = entity.GamerTag,
                     Email = entity.Email,
-                    Age = entity.Age
+                    Age = entity.Age,
+                    GameListItems = gameList
                 };
             }
         }
@@ -81,6 +98,8 @@ namespace GamerHQ_Services
                 entity.GamerTag = model.GamerTag;
                 entity.Email = model.Email;
                 entity.Age = model.Age;
+                
+                entity.WantsCrossplay = model.WantsCrossplay;
 
                 return ctx.SaveChanges() == 1;
             }
