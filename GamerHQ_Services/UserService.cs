@@ -23,9 +23,7 @@ namespace GamerHQ_Services
                     GamerTag = model.GamerTag,
                     Email = model.Email,
                     Age = model.Age,
-                    
-                    //PlatformType = model.PlatformTypes
-                    
+                    PlatformTypes = model.PlatformTypes
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -49,6 +47,7 @@ namespace GamerHQ_Services
                             GamerTag = e.GamerTag,
                             Email = e.Email,
                             Age = e.Age,
+                            PlatformType = e.PlatformTypes,
                             WantsCrossplay = e.WantsCrossplay
                         }
                         );
@@ -81,6 +80,7 @@ namespace GamerHQ_Services
                     GamerTag = entity.GamerTag,
                     Email = entity.Email,
                     Age = entity.Age,
+                    PlatformType = entity.PlatformTypes,
                     GameListItems = gameList
                 };
             }
@@ -98,7 +98,7 @@ namespace GamerHQ_Services
                 entity.GamerTag = model.GamerTag;
                 entity.Email = model.Email;
                 entity.Age = model.Age;
-                
+                entity.PlatformTypes = model.PlatformType;
                 entity.WantsCrossplay = model.WantsCrossplay;
 
                 return ctx.SaveChanges() == 1;

@@ -12,18 +12,29 @@ namespace GamerHQ.Controllers
     public class UserController : Controller
     {
         // GET: User
-        public ActionResult Index(string searchBy, int? search)
+        public ActionResult Index(string searchBy, string search)
         {
             var service = new UserService();
             var model = service.GetUsers();
             if (searchBy == "Age")
             {
-                return View(model.Where(x => x.Age == search));
+                return View(model.Where(x => x.Age == int.Parse(search)));
+                
+            }
+            else if (searchBy == "Platform")
+            {
+                return View(model.Where(x => x.PlatformType.ToString() == search));
+
             }
             else
             {
                 return View(model);
             }
+            //else
+            //{
+            //    return View(model);
+            //}
+
         }
         //Get
         public ActionResult Create()
@@ -63,6 +74,7 @@ namespace GamerHQ.Controllers
                     GamerTag = detail.GamerTag,
                     Email = detail.Email,
                     Age = detail.Age,
+                    PlatformType = detail.PlatformType,
                     WantsCrossplay = detail.WantsCrossplay
                 };
             return View(model);

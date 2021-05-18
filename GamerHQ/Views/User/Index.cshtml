@@ -13,7 +13,10 @@
     @using (Html.BeginForm("Index", "User", FormMethod.Get))
     {
 
-        <b>SearchBy: </b> @Html.RadioButton("searchBy", "Age", true) <text>Age</text> <br />
+        <b>SearchBy: </b>
+        @Html.RadioButton("searchBy", "Age", true) <text>Age</text>
+        @Html.RadioButton("searchBy", "Platform") <text>Platform</text>
+        <br />
         @Html.TextBox("search") <input type="submit" value="Search" />
     }
 </p>
@@ -31,6 +34,9 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Age)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlatformType)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.WantsCrossplay)
@@ -53,6 +59,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlatformType)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.WantsCrossplay, new { Id = item.UserID })

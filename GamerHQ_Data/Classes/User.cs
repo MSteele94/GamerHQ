@@ -6,12 +6,12 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static GamerHQ_Data.Classes.PlatformEnum;
 
 namespace GamerHQ_Data
 {
     public class User
     {
-        public enum PlatformType { Playstation, Xbox, PC, Switch, Mobile }
         [Key]
         public int UserID { get; set; }
         public string Name { get; set; }
@@ -23,7 +23,7 @@ namespace GamerHQ_Data
         public int Age { get; set; }
         [DefaultValue(false)]
         public bool WantsCrossplay { get; set; }
-
+        public PlatformType PlatformTypes { get; set; }
         public virtual ICollection<JoiningTable> JoiningTables { get; set; } = new List<JoiningTable>();
         //public virtual ICollection<GameListItem> GameListItems { get; set; } = new List<GameListItem>();
 
