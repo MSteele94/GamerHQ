@@ -23,6 +23,8 @@ namespace GamerHQ_Models.UserModels
         public int Age { get; set; }
         [Required]
         public string Email { get; set; }
+        public bool WantsCrossplay { get; set; }
+
         [Display(Name = "Pick a game you play")]
         public virtual ICollection<GameListItem> GameListItems { get; set; } = new List<GameListItem>();
 

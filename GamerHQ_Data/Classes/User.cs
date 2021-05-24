@@ -21,13 +21,12 @@ namespace GamerHQ_Data
         public string Email { get; set; }
         [Required]
         public int Age { get; set; }
-        [DefaultValue(false)]
+        
         public bool WantsCrossplay { get; set; }
         public PlatformType PlatformTypes { get; set; }
         public virtual ICollection<JoiningTable> JoiningTables { get; set; } = new List<JoiningTable>();
         //public virtual ICollection<GameListItem> GameListItems { get; set; } = new List<GameListItem>();
 
-        //public virtual ICollection<Game> Games { get; set; }
-        //public virtual ICollection<Platform> Platforms { get; set; }
+       
     }
 }

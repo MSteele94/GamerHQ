@@ -1,4 +1,5 @@
-﻿using GamerHQ_Models.JoiningTableModels;
+﻿using GamerHQ_Data;
+using GamerHQ_Models.JoiningTableModels;
 using GamerHQ_Services;
 using System;
 using System.Collections.Generic;
@@ -13,8 +14,10 @@ namespace GamerHQ.Controllers
         // GET: JoiningTable
         public ActionResult Index()
         {
-            
-            return View();
+           
+            var service = new JoiningTableService();
+            var model = service.GetJoiningTable();
+            return View(model);
         }
         private JoiningTableService CreateJoiningTableService()
         {

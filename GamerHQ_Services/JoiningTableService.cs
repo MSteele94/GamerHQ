@@ -16,8 +16,9 @@ namespace GamerHQ_Services
             var entity =
                 new JoiningTable()
                 {
-                    Users = model.Users,
-                    Game = model.Games
+                    UserID = model.UserID,
+                    GameID = model.GameID
+
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -25,5 +26,28 @@ namespace GamerHQ_Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        public IEnumerable<JoiningListItem> GetJoiningTable()
+        
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                    .JoiningTables
+                    .Select(
+                        e =>
+                        new JoiningListItem
+                        {
+                            UserID = e.UserID,
+                            User = e.Users,
+                            GameID = e.GameID,
+                            Game = e.Game
+                        }
+                        );
+                return query.ToArray();
+            }
+        }
+        
     }
 }

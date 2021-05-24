@@ -11,7 +11,9 @@ namespace GamerHQ_Models.JoiningTableModels
     {
         public int ID { get; set; }
 
-        public virtual User Users { get; set; }
+        public int UserID { get; set; }
+        public int GameID { get; set; }
+        //public virtual User Users { get; set; }
         public virtual Game Games { get; set; }
     }
 }

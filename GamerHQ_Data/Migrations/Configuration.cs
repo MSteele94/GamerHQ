@@ -1,5 +1,8 @@
 namespace GamerHQ_Data.Migrations
 {
+    using GamerHQ.Data;
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -27,6 +30,28 @@ namespace GamerHQ_Data.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
+
+            if (!roleManager.RoleExists("Admin"))
+                roleManager.Create(new IdentityRole("Admin"));
+
+            var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+            
+            if (userManager.FindByEmail("ghqadmin@gmail.com") == null)
+            {
+                var user = new ApplicationUser
+                {
+                    Email = "ghqadmin@gmail.com",
+                    UserName = "ghqadmin@gmail.com"
+                };
+
+                var result = userManager.Create(user, "Test1!");
+
+                if (result.Succeeded)
+                    userManager.AddToRole(userManager.FindByEmail(user.UserName).Id, "Admin");
+            }
+
+
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using GamerHQ_Models.GameModels;
+﻿using GamerHQ_Data.Classes;
+using GamerHQ_Models.GameModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -23,7 +24,9 @@ namespace GamerHQ_Models.UserModels
         public PlatformType PlatformType { get; set; }
 
         public bool WantsCrossplay { get; set; }
-        public virtual ICollection<GameListItem> GameListItems { get; set; } = new List<GameListItem>();
+        public virtual ICollection<JoiningTable> JoiningTables { get; set; } = new List<JoiningTable>();
+
+        //public virtual ICollection<GameListItem> GameListItems { get; set; } = new List<GameListItem>();
 
     }
 }

@@ -23,7 +23,8 @@ namespace GamerHQ_Services
                     GamerTag = model.GamerTag,
                     Email = model.Email,
                     Age = model.Age,
-                    PlatformTypes = model.PlatformTypes
+                    PlatformTypes = model.PlatformTypes,
+                    WantsCrossplay = model.WantsCrossplay
                 };
             using (var ctx = new ApplicationDbContext())
             {

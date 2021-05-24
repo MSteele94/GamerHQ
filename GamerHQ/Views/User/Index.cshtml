@@ -66,8 +66,8 @@
             <td>
                 @Html.DisplayFor(modelItem => item.WantsCrossplay, new { Id = item.UserID })
             </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.UserID }) |
+            <td >
+                @Html.ActionLink("Edit", "Edit" , new { id = item.UserID }, htmlAttributes: new { @class = "actionlinkbutton" })|
                 @Html.ActionLink("Details", "Details", new { id = item.UserID }) |
                 @Html.ActionLink("Delete", "Delete", new { id = item.UserID })
             </td>

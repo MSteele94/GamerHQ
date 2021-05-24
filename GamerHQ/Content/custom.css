@@ -1,0 +1,17 @@
+﻿.row{
+    margin-right: -15px;
+    margin-left: -15px;
+}
+a.actionlinkbutton:link{
+    color: lightgreen;
+}
+a.actionlinkbutton:visited{
+    color: blue;
+}
+a.actionlinkbutton:hover {
+    color: red;
+}
+.dropdownlist{
+    background-color: black;
+    color: red;
+}

@@ -56,6 +56,13 @@
         <dd>
             @Html.DisplayFor(model => model.PlatformType)
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.GameListItems)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GameListItems)
+        </dd>
         @*<dt>
             @Html.DisplayNameFor(model => model.WantsCrossplay)
         </dt>*@
@@ -65,6 +72,8 @@
         </dd>*@
 
     </dl>
+
+       
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.UserID }) |

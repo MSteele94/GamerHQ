@@ -1,4 +1,6 @@
-﻿using GamerHQ_Models.UserModels;
+﻿using GamerHQ_Data;
+using GamerHQ_Models.GameModels;
+using GamerHQ_Models.UserModels;
 using GamerHQ_Services;
 using System;
 using System.Collections.Generic;
@@ -14,6 +16,8 @@ namespace GamerHQ.Controllers
         // GET: User
         public ActionResult Index(string searchBy, string search)
         {
+           
+
             var service = new UserService();
             var model = service.GetUsers();
             if (searchBy == "Age")
@@ -39,6 +43,14 @@ namespace GamerHQ.Controllers
         //Get
         public ActionResult Create()
         {
+            var service = new GameService();
+            ViewBag.Games = service.GetGames();
+
+                
+
+            //ViewBag.Games = "Call of Duty";
+            //ViewBag.Games = "Outriders";
+            //ViewBag.Games = "CSGO";
             return View();
         }
         [HttpPost]
@@ -64,8 +76,15 @@ namespace GamerHQ.Controllers
         }
         public ActionResult Edit(int id)
         {
+
             var service = CreateUserService();
-            var detail = service.GetUserById(id);
+            var detail = service.GetUserById(id); 
+
+            //Used this with the PartialView helper in the Edit View. Did not work
+
+            //var service2 = new GameService();
+            //ViewBag.Games = service2.GetGames();
+
             var model =
                 new UserEdit
                 {
@@ -75,7 +94,8 @@ namespace GamerHQ.Controllers
                     Email = detail.Email,
                     Age = detail.Age,
                     PlatformType = detail.PlatformType,
-                    WantsCrossplay = detail.WantsCrossplay
+                    WantsCrossplay = detail.WantsCrossplay,
+
                 };
             return View(model);
         }

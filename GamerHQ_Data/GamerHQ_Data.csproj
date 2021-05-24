@@ -95,6 +95,10 @@
     <Compile Include="Migrations\202105171751418_AddingPlatformEnum.Designer.cs">
       <DependentUpon>202105171751418_AddingPlatformEnum.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105191611403_UpdatingPlatformClass.cs" />
+    <Compile Include="Migrations\202105191611403_UpdatingPlatformClass.Designer.cs">
+      <DependentUpon>202105191611403_UpdatingPlatformClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -137,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105171751418_AddingPlatformEnum.resx">
       <DependentUpon>202105171751418_AddingPlatformEnum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105191611403_UpdatingPlatformClass.resx">
+      <DependentUpon>202105191611403_UpdatingPlatformClass.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

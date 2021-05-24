@@ -10,7 +10,9 @@ namespace GamerHQ_Models.JoiningTableModels
     public class JoiningListItem
     {
         public int ID { get; set; }
-        public virtual User Users { get; set; }
-        public virtual Game Games { get; set; }
+        public int UserID { get; set; }
+        public virtual User User { get; set; }
+        public int GameID { get; set; }
+        public virtual Game Game { get; set; }
     }
 }
