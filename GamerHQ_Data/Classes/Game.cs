@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static GamerHQ_Data.Classes.PlatformEnum;
 
 namespace GamerHQ_Data
 {
@@ -18,6 +19,7 @@ namespace GamerHQ_Data
         public string GameName { get; set; }
         public ICollection<Game> Games { get; set; }
         public virtual ICollection<JoiningTable> JoiningTables { get; set; }
+        public GenreType GenreType { get; set; }
 
         //Possibly used to filter for games by newest or date added
         public DateTimeOffset CreatedUtc { get; set; }

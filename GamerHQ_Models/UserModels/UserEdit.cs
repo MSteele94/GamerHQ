@@ -22,7 +22,8 @@ namespace GamerHQ_Models.UserModels
         public string Email { get; set; }
         public int Age { get; set; }
         public PlatformType PlatformType { get; set; }
-
+        public GenreType Genres { get; set; }
+        [Display(Name="Crossplay")]
         public bool WantsCrossplay { get; set; }
         public virtual ICollection<JoiningTable> JoiningTables { get; set; } = new List<JoiningTable>();
 

@@ -24,6 +24,8 @@ namespace GamerHQ_Data
         
         public bool WantsCrossplay { get; set; }
         public PlatformType PlatformTypes { get; set; }
+        public GenreType GenreType { get; set; }
+
         public virtual ICollection<JoiningTable> JoiningTables { get; set; } = new List<JoiningTable>();
         //public virtual ICollection<GameListItem> GameListItems { get; set; } = new List<GameListItem>();
 

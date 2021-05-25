@@ -99,6 +99,14 @@
     <Compile Include="Migrations\202105191611403_UpdatingPlatformClass.Designer.cs">
       <DependentUpon>202105191611403_UpdatingPlatformClass.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105242009276_AddingGenreType.cs" />
+    <Compile Include="Migrations\202105242009276_AddingGenreType.Designer.cs">
+      <DependentUpon>202105242009276_AddingGenreType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105251348159_AddingGenres.cs" />
+    <Compile Include="Migrations\202105251348159_AddingGenres.Designer.cs">
+      <DependentUpon>202105251348159_AddingGenres.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -144,6 +152,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105191611403_UpdatingPlatformClass.resx">
       <DependentUpon>202105191611403_UpdatingPlatformClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105242009276_AddingGenreType.resx">
+      <DependentUpon>202105242009276_AddingGenreType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105251348159_AddingGenres.resx">
+      <DependentUpon>202105251348159_AddingGenres.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

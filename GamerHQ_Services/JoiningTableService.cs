@@ -42,7 +42,8 @@ namespace GamerHQ_Services
                             UserID = e.UserID,
                             User = e.Users,
                             GameID = e.GameID,
-                            Game = e.Game
+                            Game = e.Game,
+                            GameName = ctx.Games.FirstOrDefault(x => x.GameID == e.GameID).GameName
                         }
                         );
                 return query.ToArray();

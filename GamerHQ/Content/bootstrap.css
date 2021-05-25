@@ -1408,7 +1408,7 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
     line-height: 1.42857143;
-    color: #fff;
+    color: black;
     background-color: #fff;
 }
 
@@ -3918,8 +3918,8 @@ fieldset[disabled] a.btn {
 }
 
 .btn-default {
-    color: #333;
-    background-color: #fff;
+    color: black;
+    background-color: navajowhite;
     border-color: #ccc;
 }
 
@@ -5403,6 +5403,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 
         .navbar-nav .open .dropdown-menu > li > a {
             line-height: 20px;
+            color: black;
         }
 
             .navbar-nav .open .dropdown-menu > li > a:hover,
@@ -6144,6 +6145,7 @@ a.badge:focus {
     padding-bottom: 20px;
     margin-bottom: 40px;
     color: inherit;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
     .jumbotron h1,

@@ -17,6 +17,8 @@ namespace GamerHQ_Models.UserModels
         public string Email { get; set; }
         public int Age { get; set; }
         public PlatformType PlatformType { get; set; }
+        [Display(Name="Preferred Game Genre")]
+        public GenreType Genres { get; set; }
 
         [UIHint("Starred")]
         [Display(Name= "Allows Crossplay")]

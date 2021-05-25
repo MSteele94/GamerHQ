@@ -21,6 +21,8 @@ namespace GamerHQ_Services
                     Games = model.Games,
                     CreatedUtc = DateTimeOffset.Now,
                     JoiningTables = model.JoiningTables,
+                    GenreType = model.Genres
+                    
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -42,6 +44,7 @@ namespace GamerHQ_Services
                         GameID = e.GameID,
                         GameName = e.GameName,
                         Games = e.Games,
+                        Genres = e.GenreType,
                         CreatedUtc = DateTimeOffset.Now
                     }
                     );
@@ -61,7 +64,7 @@ namespace GamerHQ_Services
                     {
                         GameID = entity.GameID,
                         GameName = entity.GameName,
-                        //Games = entity.Games,
+                        Genres = entity.GenreType,
                         CreatedUtc = DateTimeOffset.Now
                     };
             }
@@ -76,7 +79,7 @@ namespace GamerHQ_Services
                     .Single(e => e.GameID == model.GameID);
                 entity.GameID = model.GameID;
                 entity.GameName = model.GameName;
-                entity.Games = model.Games;
+                entity.GenreType = model.Genres;
                 entity.CreatedUtc = DateTimeOffset.Now;
 
                 return ctx.SaveChanges() == 1;

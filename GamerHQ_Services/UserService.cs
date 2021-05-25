@@ -18,12 +18,12 @@ namespace GamerHQ_Services
             var entity =
                 new User()
                 {
-                    //Need to add PlatformType Enum and GameListItem ICollection to user class/ implement them into this method somehow
                     Name = model.Name,
                     GamerTag = model.GamerTag,
                     Email = model.Email,
                     Age = model.Age,
                     PlatformTypes = model.PlatformTypes,
+                    GenreType = model.Genres,
                     WantsCrossplay = model.WantsCrossplay
                 };
             using (var ctx = new ApplicationDbContext())
@@ -49,6 +49,7 @@ namespace GamerHQ_Services
                             Email = e.Email,
                             Age = e.Age,
                             PlatformType = e.PlatformTypes,
+                            Genres = e.GenreType,
                             WantsCrossplay = e.WantsCrossplay
                         }
                         );
@@ -82,7 +83,8 @@ namespace GamerHQ_Services
                     Email = entity.Email,
                     Age = entity.Age,
                     PlatformType = entity.PlatformTypes,
-                    GameListItems = gameList
+                    Genres = entity.GenreType,
+                    JoiningTables = entity.JoiningTables
                 };
             }
         }
@@ -100,7 +102,9 @@ namespace GamerHQ_Services
                 entity.Email = model.Email;
                 entity.Age = model.Age;
                 entity.PlatformTypes = model.PlatformType;
+                entity.GenreType = model.Genres;
                 entity.WantsCrossplay = model.WantsCrossplay;
+                entity.JoiningTables = model.JoiningTables;
 
                 return ctx.SaveChanges() == 1;
             }

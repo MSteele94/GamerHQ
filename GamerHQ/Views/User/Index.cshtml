@@ -7,7 +7,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create", "", htmlAttributes: new { @class = "refreshpagebtn btn btn-default smallbtn" })
 </p>
 <p>
     @using (Html.BeginForm("Index", "User", FormMethod.Get))
@@ -17,7 +17,8 @@
         @Html.RadioButton("searchBy", "Age", true) <text>Age</text>
         @Html.RadioButton("searchBy", "Platform") <text>Platform</text>
         <br />
-        @Html.TextBox("search") <input type="submit" value="Search" />
+
+        @Html.TextBox("search") <input class="searchbtn" type="submit" value="Search" />
     }
 </p>
 <table class="table">
@@ -39,6 +40,9 @@
             @Html.DisplayNameFor(model => model.PlatformType)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.Genres)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.WantsCrossplay)
         </th>
         <th></th>
@@ -46,33 +50,41 @@
 
     @foreach (var item in Model)
     {
-        <tr>
+<tr>
 
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GamerTag)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Age)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PlatformType)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.WantsCrossplay, new { Id = item.UserID })
-            </td>
-            <td >
-                @Html.ActionLink("Edit", "Edit" , new { id = item.UserID }, htmlAttributes: new { @class = "actionlinkbutton" })|
-                @Html.ActionLink("Details", "Details", new { id = item.UserID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.UserID })
-            </td>
-        </tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.GamerTag)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Email)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Age)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PlatformType)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Genres)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.WantsCrossplay, new { Id = item.UserID })
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.UserID }, htmlAttributes: new { @class = "editactionlinkbutton" })|
+        @Html.ActionLink("Details", "Details", new { id = item.UserID }, htmlAttributes: new { @class = "detailsactionlinkbutton" }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.UserID })
+    </td>
+</tr>
+
+
     }
+        <div >
+        @Html.ActionLink("Refresh Page", "Index", "" , htmlAttributes: new { @class = "refreshpagebtn btn btn-default smallbtn" })
+        </div>
 
 </table>
 @section scripts {

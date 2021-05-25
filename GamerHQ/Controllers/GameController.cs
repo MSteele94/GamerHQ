@@ -51,7 +51,7 @@ namespace GamerHQ.Controllers
                 {
                     GameID = detail.GameID,
                     GameName = detail.GameName,
-                    //GameRating = detail.GameRating,
+                    Genres = detail.Genres,
                     CreatedUtc = detail.CreatedUtc,
                     //Games = detail.Games,
                 };

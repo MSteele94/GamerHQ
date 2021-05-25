@@ -20,16 +20,16 @@
                 </button>
                 <div>
 
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("GamerHQ", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
                 </div>
             </div>
             <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        @*<li>@Html.ActionLink("Home", "Index", "Home")</li>*@
                         @if (User.Identity.IsAuthenticated)
                         {
 
-                            <li>@Html.ActionLink("Users", "Index", "User")</li>
+                            <li>@Html.ActionLink("Users", "Index", "User", null,  new { @id = "navbtn" })</li>
                             <li>@Html.ActionLink("Games", "Index", "Game")</li>
 
                         }
