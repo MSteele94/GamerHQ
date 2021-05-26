@@ -22,13 +22,30 @@ a.detailsactionlinkbutton:hover {
 }
 .col-md-4{
     color: black;
-    
+    margin: 30px 80px 20px;
+    margin-left: 100px;
+    text-align: center;
 }
 .jumbotron{
     color: darkslateblue;
+    margin-left: 150px;
+    margin-right: 150px;
+    text-align: center;
 }
 .jumbotron p{
     color: darkslateblue;
+    margin: 30px auto 30px auto;
+}
+.jumbotron h1{
+    font-size: 150px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    top: 20px;
+    z-index: -1;
+    color: lightcyan;
+    margin: 0px auto 0px auto;
 }
 .btn-default{
     color: black;
@@ -75,11 +92,22 @@ a.detailsactionlinkbutton:hover {
     background-color: black;
 }
 #navbtn{
-    color: red;
+    color: blue;
 }
 #navbtn:hover{
-    color: yellow;
+    color: green;
 }
 .checkbox{
     margin: 25px;
+}
+.deletebtn{
+    background-color: lightgrey;
+    color: red;
+}
+.deletebtn:hover{
+    background-color:red;
+    color: black;
+}
+navbar-right{
+    color: blue;
 }

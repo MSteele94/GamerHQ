@@ -25,16 +25,15 @@
             </div>
             <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        @*<li>@Html.ActionLink("Home", "Index", "Home")</li>*@
                         @if (User.Identity.IsAuthenticated)
                         {
 
                             <li>@Html.ActionLink("Users", "Index", "User", null,  new { @id = "navbtn" })</li>
-                            <li>@Html.ActionLink("Games", "Index", "Game")</li>
+                            <li>@Html.ActionLink("Games", "Index", "Game", null, new { @id = "navbtn" })</li>
 
                         }
-                        <li>@Html.ActionLink("About", "About", "Home")</li>
-                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        <li>@Html.ActionLink("About", "About", "Home", null, new { @id = "navbtn" })</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home", null, new { @id = "navbtn" })</li>
                     </ul>
                 @Html.Partial("_LoginPartial")
             </div>

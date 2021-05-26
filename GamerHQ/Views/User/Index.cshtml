@@ -4,7 +4,6 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create", "", htmlAttributes: new { @class = "refreshpagebtn btn btn-default smallbtn" })
@@ -74,9 +73,9 @@
         @Html.DisplayFor(modelItem => item.WantsCrossplay, new { Id = item.UserID })
     </td>
     <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.UserID }, htmlAttributes: new { @class = "editactionlinkbutton" })|
-        @Html.ActionLink("Details", "Details", new { id = item.UserID }, htmlAttributes: new { @class = "detailsactionlinkbutton" }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.UserID })
+        @Html.ActionLink("Edit", "Edit", new { id = item.UserID }, htmlAttributes: new { @class = "refreshpagebtn btn btn-default smallbtn" })
+        @Html.ActionLink("Details", "Details", new { id = item.UserID }, htmlAttributes: new { @class = "refreshpagebtn btn btn-default smallbtn" })
+        @Html.ActionLink("Delete", "Delete", new { id = item.UserID }, htmlAttributes: new { @class = "deletebtn btn btn-default smallbtn" })
     </td>
 </tr>
 

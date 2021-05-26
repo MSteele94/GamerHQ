@@ -107,6 +107,10 @@
     <Compile Include="Migrations\202105251348159_AddingGenres.Designer.cs">
       <DependentUpon>202105251348159_AddingGenres.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105261602399_UpdateDateTime.cs" />
+    <Compile Include="Migrations\202105261602399_UpdateDateTime.Designer.cs">
+      <DependentUpon>202105261602399_UpdateDateTime.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -158,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105251348159_AddingGenres.resx">
       <DependentUpon>202105251348159_AddingGenres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105261602399_UpdateDateTime.resx">
+      <DependentUpon>202105261602399_UpdateDateTime.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

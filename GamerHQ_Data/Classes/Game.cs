@@ -11,7 +11,6 @@ namespace GamerHQ_Data
 {
     public class Game
     {
-        //public enum GameRating { Everyone, Teen, Mature }
 
         [Key]
         public int GameID { get; set; }
@@ -22,6 +21,6 @@ namespace GamerHQ_Data
         public GenreType GenreType { get; set; }
 
         //Possibly used to filter for games by newest or date added
-        public DateTimeOffset CreatedUtc { get; set; }
+        public DateTimeOffset? CreatedUtc { get; set; }
     }
 }

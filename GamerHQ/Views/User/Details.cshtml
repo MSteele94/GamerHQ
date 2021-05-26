@@ -4,19 +4,12 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
 
 <div>
-    <h4>UserDetail</h4>
+    <h4></h4>
     <hr />
     <dl class="dl-horizontal">
-        @*<dt>
-            @Html.DisplayNameFor(model => model.UserID)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.UserID)
-        </dd>*@
+      
 
         <dt>
             @Html.DisplayNameFor(model => model.Name)
@@ -63,33 +56,12 @@
         <dd>
             @Html.DisplayFor(model => model.Genres)
         </dd>
-        @*<dt>
-            @Html.DisplayNameFor(model => model.GameListItems)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.GameListItems)
-        </dd>*@
-        @*<dt>
-            @Html.DisplayNameFor(model => model.JoiningTables)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.JoiningTables)
-        </dd>*@
-        @*<dt>
-            @Html.DisplayNameFor(model => model.WantsCrossplay)
-        </dt>*@
-
-        @*<dd>
-            @Html.DisplayFor(model => model.WantsCrossplay)
-        </dd>*@
-
+  
     </dl>
 
        
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.UserID }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Edit", "Edit", new { id = Model.UserID }, htmlAttributes: new { @class = "refreshpagebtn btn btn-default smallbtn" })
+    @Html.ActionLink("Back to List", "Index", "", htmlAttributes: new { @class = "refreshpagebtn btn btn-default smallbtn" })
 </p>

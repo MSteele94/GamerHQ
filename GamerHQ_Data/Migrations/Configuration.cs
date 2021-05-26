@@ -7,6 +7,7 @@ namespace GamerHQ_Data.Migrations
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using static GamerHQ_Data.Classes.PlatformEnum;
 
     internal sealed class Configuration : DbMigrationsConfiguration<GamerHQ.Data.ApplicationDbContext>
     {
@@ -21,35 +22,40 @@ namespace GamerHQ_Data.Migrations
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
+            //  to avoid creating duplicatea seed data. E.g.
+
+            context.Games.AddOrUpdate(
+              p => p.GameName,
+              new Game { GameName = "League of Legends", GenreType = GenreType.MMORPG},
+              new Game { GameName = "CSGO" },
+              new Game { GameName = "Outriders" },
+              new Game { GameName = "Destiny", GenreType = GenreType.Shooter },
+              new Game { GameName = "Call of Duty: Black Ops ColdWar" },
+              new Game { GameName = "Rocket League", GenreType = GenreType.Action },
+              new Game { GameName = "Ark" }
+
+            );
             //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
-            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
+            //var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
 
-            if (!roleManager.RoleExists("Admin"))
-                roleManager.Create(new IdentityRole("Admin"));
+            //if (!roleManager.RoleExists("Admin"))
+            //    roleManager.Create(new IdentityRole("Admin"));
 
-            var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
-            
-            if (userManager.FindByEmail("ghqadmin@gmail.com") == null)
-            {
-                var user = new ApplicationUser
-                {
-                    Email = "ghqadmin@gmail.com",
-                    UserName = "ghqadmin@gmail.com"
-                };
+            //var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
 
-                var result = userManager.Create(user, "Test1!");
+            //if (userManager.FindByEmail("ghqadmin@gmail.com") == null)
+            //{
+            //    var user = new ApplicationUser
+            //    {
+            //        Email = "ghqadmin@gmail.com",
+            //        UserName = "ghqadmin@gmail.com"
+            //    };
 
-                if (result.Succeeded)
-                    userManager.AddToRole(userManager.FindByEmail(user.UserName).Id, "Admin");
-            }
+            //    var result = userManager.Create(user, "Test1!");
+
+            //    if (result.Succeeded)
+            //        userManager.AddToRole(userManager.FindByEmail(user.UserName).Id, "Admin");
+            //}
 
 
         }

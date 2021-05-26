@@ -45,7 +45,7 @@ namespace GamerHQ_Services
                         GameName = e.GameName,
                         Games = e.Games,
                         Genres = e.GenreType,
-                        CreatedUtc = DateTimeOffset.Now
+                        CreatedUtc = e.CreatedUtc
                     }
                     );
                 return query.ToArray();
@@ -65,7 +65,7 @@ namespace GamerHQ_Services
                         GameID = entity.GameID,
                         GameName = entity.GameName,
                         Genres = entity.GenreType,
-                        CreatedUtc = DateTimeOffset.Now
+                        CreatedUtc = entity.CreatedUtc
                     };
             }
         }
@@ -80,7 +80,7 @@ namespace GamerHQ_Services
                 entity.GameID = model.GameID;
                 entity.GameName = model.GameName;
                 entity.GenreType = model.Genres;
-                entity.CreatedUtc = DateTimeOffset.Now;
+                entity.CreatedUtc = model.CreatedUtc;
 
                 return ctx.SaveChanges() == 1;
             }

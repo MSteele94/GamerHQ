@@ -53,7 +53,6 @@ namespace GamerHQ.Controllers
                     GameName = detail.GameName,
                     Genres = detail.Genres,
                     CreatedUtc = detail.CreatedUtc,
-                    //Games = detail.Games,
                 };
             return View(model);
         }

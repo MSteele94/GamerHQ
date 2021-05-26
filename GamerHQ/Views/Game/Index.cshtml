@@ -4,10 +4,9 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create", "", htmlAttributes: new { @class = "refreshpagebtn btn btn-default smallbtn" })
 </p>
 <table class="table">
     <tr>
@@ -35,9 +34,9 @@
             @Html.DisplayFor(modelItem => item.CreatedUtc)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new {  id=item.GameID }) |
-            @Html.ActionLink("Details", "Details", new { id = item.GameID }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.GameID })
+            @Html.ActionLink("Edit", "Edit", new {  id=item.GameID } , htmlAttributes: new { @class = "refreshpagebtn btn btn-default smallbtn" }) 
+            @Html.ActionLink("Details", "Details", new { id = item.GameID }, htmlAttributes: new { @class = "refreshpagebtn btn btn-default smallbtn" }) 
+            @Html.ActionLink("Delete", "Delete", new { id = item.GameID }, htmlAttributes: new { @class = "refreshpagebtn btn btn-default smallbtn" })
         </td>
     </tr>
 }

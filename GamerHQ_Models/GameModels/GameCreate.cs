@@ -21,6 +21,6 @@ namespace GamerHQ_Models.GameModels
         public GenreType Genres { get; set; }
         public ICollection<Game> Games { get; set; }
         public virtual ICollection<JoiningTable> JoiningTables { get; set; }
-        public DateTimeOffset CreatedUtc { get; set; }
+        public DateTimeOffset? CreatedUtc { get; set; }
     }
 }

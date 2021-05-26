@@ -12,11 +12,12 @@ namespace GamerHQ_Models.UserModels
 {
     public class UserCreate
     {
-        //[Hidden]
         public int UserID { get; set; }
         public string Name { get; set; }
         [Required]
         public string GamerTag { get; set; }
+
+        [Display(Name = "Gaming Platform")]
         public PlatformType PlatformTypes { get; set; }
         [Display(Name= "Preferred Game Genre")]
         public GenreType Genres { get; set; }

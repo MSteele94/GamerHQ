@@ -18,6 +18,7 @@ namespace GamerHQ_Models.UserModels
         public string GamerTag { get; set; }
         public string Email { get; set; }
         public int Age { get; set; }
+        [Display(Name = "Gaming Platform ")]
         public PlatformType PlatformType { get; set; }
         public GenreType Genres { get; set; }
 
