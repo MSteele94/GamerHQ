@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using GamerHQ.Models;
 using GamerHQ.Data;
+using System.Collections.Generic;
 
 namespace GamerHQ.Controllers
 {
@@ -316,6 +317,7 @@ namespace GamerHQ.Controllers
                 return View("Error");
             }
             return RedirectToAction("VerifyCode", new { Provider = model.SelectedProvider, ReturnUrl = model.ReturnUrl, RememberMe = model.RememberMe });
+
         }
 
         //

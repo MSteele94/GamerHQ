@@ -1,10 +1,12 @@
 ﻿using GamerHQ_Data.Classes;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static GamerHQ_Data.Classes.PlatformEnum;
 
 namespace GamerHQ_Data
 {
@@ -19,9 +21,11 @@ namespace GamerHQ_Data
         public string Email { get; set; }
         [Required]
         public int Age { get; set; }
+        
+        public bool WantsCrossplay { get; set; }
+        public PlatformType PlatformTypes { get; set; }
+        public GenreType GenreType { get; set; }
 
-        public virtual ICollection<JoiningTable> JoiningTables { get; set; }
-        //public virtual ICollection<Game> Games { get; set; }
-        //public virtual ICollection<Platform> Platforms { get; set; }
+        public virtual ICollection<JoiningTable> JoiningTables { get; set; } = new List<JoiningTable>();
     }
 }

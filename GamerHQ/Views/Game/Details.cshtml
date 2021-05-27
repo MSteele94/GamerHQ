@@ -1,0 +1,37 @@
+﻿@model GamerHQ_Models.GameModels.GameDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.GameName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GameName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Genres)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Genres)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedUtc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedUtc)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  id = Model.GameID  }, htmlAttributes: new { @class = "refreshpagebtn btn btn-default smallbtn" })
+    @Html.ActionLink("Back to List", "Index", "", htmlAttributes: new { @class = "refreshpagebtn btn btn-default smallbtn" })
+</p>

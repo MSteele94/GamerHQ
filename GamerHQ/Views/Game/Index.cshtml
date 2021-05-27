@@ -1,0 +1,44 @@
+﻿@model IEnumerable<GamerHQ_Models.GameModels.GameListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<p>
+    @Html.ActionLink("Create New", "Create", "", htmlAttributes: new { @class = "refreshpagebtn btn btn-default smallbtn" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.GameID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GameName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedUtc)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.GameID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GameName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedUtc)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {  id=item.GameID } , htmlAttributes: new { @class = "refreshpagebtn btn btn-default smallbtn" }) 
+            @Html.ActionLink("Details", "Details", new { id = item.GameID }, htmlAttributes: new { @class = "refreshpagebtn btn btn-default smallbtn" }) 
+            @Html.ActionLink("Delete", "Delete", new { id = item.GameID }, htmlAttributes: new { @class = "refreshpagebtn btn btn-default smallbtn" })
+        </td>
+    </tr>
+}
+
+</table>

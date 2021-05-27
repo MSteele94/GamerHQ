@@ -1,4 +1,6 @@
-﻿using GamerHQ_Models.UserModels;
+﻿using GamerHQ_Data;
+using GamerHQ_Models.GameModels;
+using GamerHQ_Models.UserModels;
 using GamerHQ_Services;
 using System;
 using System.Collections.Generic;
@@ -12,22 +14,33 @@ namespace GamerHQ.Controllers
     public class UserController : Controller
     {
         // GET: User
-        public ActionResult Index(string searchBy, int? search)
+        public ActionResult Index(string searchBy, string search)
         {
+           
+
             var service = new UserService();
             var model = service.GetUsers();
             if (searchBy == "Age")
             {
-                return View(model.Where(x => x.Age == search));
+                return View(model.Where(x => x.Age == int.Parse(search)));
+                
+            }
+            else if (searchBy == "Platform")
+            {
+                return View(model.Where(x => x.PlatformType.ToString() == search));
+
             }
             else
             {
                 return View(model);
             }
+            
         }
         //Get
         public ActionResult Create()
         {
+            var service = new GameService();
+            ViewBag.Games = service.GetGames();
             return View();
         }
         [HttpPost]
@@ -47,6 +60,7 @@ namespace GamerHQ.Controllers
         }
         public ActionResult Details(int id)
         {
+
             var svc = CreateUserService();
             var model = svc.GetUserById(id);
             return View(model);
@@ -55,6 +69,10 @@ namespace GamerHQ.Controllers
         {
             var service = CreateUserService();
             var detail = service.GetUserById(id);
+
+            var service2 = new JoiningTableService();
+            ViewBag.Games = service2.GetJoiningTable();
+
             var model =
                 new UserEdit
                 {
@@ -62,7 +80,11 @@ namespace GamerHQ.Controllers
                     Name = detail.Name,
                     GamerTag = detail.GamerTag,
                     Email = detail.Email,
-                    Age = detail.Age
+                    Age = detail.Age,
+                    PlatformType = detail.PlatformType,
+                    Genres = detail.Genres,
+                    WantsCrossplay = detail.WantsCrossplay,
+                    JoiningTables = detail.JoiningTables
                 };
             return View(model);
         }
@@ -72,11 +94,11 @@ namespace GamerHQ.Controllers
         {
             if (!ModelState.IsValid) return View(model);
 
-            //if (model.UserID != id)
-            //{
-            //    ModelState.AddModelError("", "Id Mismatch");
-            //    return View(model);
-            //}
+            if (model.UserID != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
             var service = CreateUserService();
 
             if (service.UpdateUser(model))

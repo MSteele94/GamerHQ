@@ -20,9 +20,5 @@ namespace GamerHQ_Data.Classes
         [ForeignKey(nameof(Game))]
         public int GameID { get; set; }
         public virtual Game Game { get; set; }
-
-        [ForeignKey(nameof(Platforms))]
-        public int PlatformID { get; set; }
-        public virtual Platform Platforms { get; set; }
     }
 }

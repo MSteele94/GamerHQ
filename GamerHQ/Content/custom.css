@@ -1,0 +1,122 @@
+﻿.row{
+    margin-right: -15px;
+    margin-left: -15px;
+}
+a.editactionlinkbutton:link{
+    color: lightgreen;
+}
+a.editactionlinkbutton:visited{
+    color: darkred;
+}
+a.editactionlinkbutton:hover {
+    color: blue;
+}
+a.detailsactionlinkbutton:link{
+    color: lightgreen;
+}
+a.detailsactionlinkbutton:visited {
+    color: darkred;
+}
+a.detailsactionlinkbutton:hover {
+    color: blue;
+}
+.col-md-4{
+    color: black;
+    margin: 30px 80px 20px;
+    margin-left: 100px;
+    text-align: center;
+}
+.jumbotron{
+    color: darkslateblue;
+    margin-left: 150px;
+    margin-right: 150px;
+    text-align: center;
+}
+.jumbotron p{
+    color: darkslateblue;
+    margin: 30px auto 30px auto;
+}
+.jumbotron h1{
+    font-size: 150px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    top: 20px;
+    z-index: -1;
+    color: lightcyan;
+    margin: 0px auto 0px auto;
+}
+.btn-default{
+    color: black;
+    background-color: antiquewhite;
+    border-radius: 1.5em;
+}
+.btn-primary{
+    border-radius: 15px 50px 30px;
+
+}
+.searchbtn{
+    border-radius: 1em;
+    
+}
+.searchbtn:hover{
+    color: white;
+    background-color: gray;
+}
+.refreshpagebtn{
+    color: gray;
+
+}
+.smallbtn{
+    background-color: whitesmoke;
+    border-radius: 1em;
+    padding: 5px;
+    color: black;
+}
+.smallbtn:hover{
+    background-color: gray;
+    color: black;
+}
+.navbar{
+    background-color: transparent;
+    border: none;
+    color: black;
+    
+}
+.navbarlinks{
+    color: black;
+}
+.navbar-collapse collapse ul nav navbar-nav li navbarbtn {
+    color: black;
+    background-color: black;
+}
+#navbtn{
+    color: blue;
+}
+#navbtn:hover{
+    color: green;
+}
+.checkbox{
+    margin: 25px;
+}
+.deletebtn{
+    background-color: lightgrey;
+    color: red;
+}
+.deletebtn:hover{
+    background-color:red;
+    color: black;
+}
+navbar-right{
+    color: blue;
+}
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background: url(assets/redbadgebackground5jpg.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+}
+
