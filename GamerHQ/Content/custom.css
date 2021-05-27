@@ -111,3 +111,12 @@ a.detailsactionlinkbutton:hover {
 navbar-right{
     color: blue;
 }
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background: url(assets/redbadgebackground5jpg.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+}
+
