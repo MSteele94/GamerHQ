@@ -37,7 +37,7 @@ namespace GamerHQ.Data
         public DbSet<User> UsersInfo { get; set; }
         public DbSet<Game> Games { get; set; }
         public DbSet<JoiningTable> JoiningTables { get; set; }
-        public DbSet<Enums> Platforms { get; set; }
+        public DbSet<PlatformEnum> Platforms { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

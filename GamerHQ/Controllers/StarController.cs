@@ -31,7 +31,6 @@ namespace GamerHQ.Controllers
                     Email = detail.Email,
                     Age = detail.Age,
                     PlatformType = detail.PlatformType,
-                    Genres = detail.Genres,
                     WantsCrossplay = newState
                 };
 

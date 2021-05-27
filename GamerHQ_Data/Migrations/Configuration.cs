@@ -7,7 +7,7 @@ namespace GamerHQ_Data.Migrations
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
-    using static GamerHQ_Data.Classes.Enums;
+    using static GamerHQ_Data.Classes.PlatformEnum;
 
     internal sealed class Configuration : DbMigrationsConfiguration<GamerHQ.Data.ApplicationDbContext>
     {
@@ -26,20 +26,15 @@ namespace GamerHQ_Data.Migrations
 
             context.Games.AddOrUpdate(
               p => p.GameName,
-              new Game { GameName = "League of Legends", GenreType = GenreType.MMORPG, CreatedUtc = DateTime.Now },
-              new Game { GameName = "CSGO", GenreType = GenreType.Shooter, CreatedUtc = DateTime.Now },
-              new Game { GameName = "Outriders", GenreType = GenreType.OpenWorld, CreatedUtc = DateTime.Now },
-              new Game { GameName = "Destiny", GenreType = GenreType.Shooter, CreatedUtc = DateTime.Now },
-              new Game { GameName = "Call of Duty: Black Ops ColdWar", GenreType = GenreType.Shooter, CreatedUtc = DateTime.Now },
-              new Game { GameName = "Rocket League", GenreType = GenreType.Action, CreatedUtc = DateTime.Now },
-              new Game { GameName = "Ark", GenreType = GenreType.OpenWorld, CreatedUtc = DateTime.Now }
-            );
-            context.UsersInfo.AddOrUpdate(
-                p => p.Name,
-                new User { Name = "Michael", GamerTag = "FlyinZebrah", PlatformTypes = PlatformType.Playstation, GenreType = GenreType.Shooter, Age = 26, Email = "msteele94@gmail.com", WantsCrossplay = true},
+              new Game { GameName = "League of Legends", GenreType = GenreType.MMORPG},
+              new Game { GameName = "CSGO" },
+              new Game { GameName = "Outriders" },
+              new Game { GameName = "Destiny", GenreType = GenreType.Shooter },
+              new Game { GameName = "Call of Duty: Black Ops ColdWar" },
+              new Game { GameName = "Rocket League", GenreType = GenreType.Action },
+              new Game { GameName = "Ark" }
 
-                new User { Name = "Addey", GamerTag = "AddeySucksAtLeague", PlatformTypes = PlatformType.PC, GenreType = GenreType.MMORPG, Age = 32, Email = "IAmBadAtLeague", WantsCrossplay = false}
-                );
+            );
             //
             //var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
 

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GamerHQ_Data.Classes
 {
-    public class Enums
+    public class PlatformEnum
     {
         [Key]
         public int ID { get; set; }
