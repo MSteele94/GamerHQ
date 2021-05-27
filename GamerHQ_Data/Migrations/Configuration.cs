@@ -26,15 +26,22 @@ namespace GamerHQ_Data.Migrations
 
             context.Games.AddOrUpdate(
               p => p.GameName,
-              new Game { GameName = "League of Legends", GenreType = GenreType.MMORPG},
-              new Game { GameName = "CSGO" },
-              new Game { GameName = "Outriders" },
-              new Game { GameName = "Destiny", GenreType = GenreType.Shooter },
-              new Game { GameName = "Call of Duty: Black Ops ColdWar" },
-              new Game { GameName = "Rocket League", GenreType = GenreType.Action },
-              new Game { GameName = "Ark" }
+              new Game { GameName = "League of Legends", GenreType = GenreType.MMORPG, CreatedUtc = DateTimeOffset.UtcNow },
+              new Game { GameName = "CSGO", GenreType = GenreType.Shooter, CreatedUtc = DateTimeOffset.UtcNow },
+              new Game { GameName = "Outriders", GenreType = GenreType.OpenWorld, CreatedUtc = DateTimeOffset.UtcNow },
+              new Game { GameName = "Destiny", GenreType = GenreType.Shooter, CreatedUtc = DateTimeOffset.UtcNow },
+              new Game { GameName = "Call of Duty: Black Ops ColdWar" , GenreType = GenreType.Shooter, CreatedUtc = DateTimeOffset.UtcNow },
+              new Game { GameName = "Rocket League", GenreType = GenreType.Action, CreatedUtc = DateTimeOffset.UtcNow },
+              new Game { GameName = "Ark", GenreType = GenreType.Adventure, CreatedUtc = DateTimeOffset.UtcNow}
 
             );
+            context.UsersInfo.AddOrUpdate(
+                p => p.Name,
+                new User { Name = "Michael", GamerTag = "FlyinZebrah", Email = "msteele94@gmail.com", Age =
+                26, WantsCrossplay = true, PlatformTypes = PlatformType.Playstation, GenreType = GenreType.Shooter},
+                new User { Name = "Addey", GamerTag = "AddeySucksAtLeague", Email = "IAmBadAtLeague@gmail.com", Age =
+                32, WantsCrossplay = false, PlatformTypes = PlatformType.PC, GenreType = GenreType.MMORPG}
+                );
             //
             //var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
 
