@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static GamerHQ_Data.Classes.PlatformEnum;
+using static GamerHQ_Data.Classes.Enums;
 
 namespace GamerHQ_Data
 {

@@ -80,7 +80,7 @@ namespace GamerHQ_Services
                 entity.GameID = model.GameID;
                 entity.GameName = model.GameName;
                 entity.GenreType = model.Genres;
-                entity.CreatedUtc = model.CreatedUtc;
+                //entity.CreatedUtc = model.CreatedUtc;
 
                 return ctx.SaveChanges() == 1;
             }

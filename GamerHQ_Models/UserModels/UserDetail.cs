@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static GamerHQ_Data.Classes.PlatformEnum;
+using static GamerHQ_Data.Classes.Enums;
 using static GamerHQ_Data.User;
 
 namespace GamerHQ_Models.UserModels
@@ -20,6 +20,8 @@ namespace GamerHQ_Models.UserModels
         public int Age { get; set; }
         [Display(Name = "Gaming Platform ")]
         public PlatformType PlatformType { get; set; }
+
+        [Display(Name ="Preferred Game Genre")]
         public GenreType Genres { get; set; }
 
         public bool WantsCrossplay { get; set; }

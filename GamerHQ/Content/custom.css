@@ -47,9 +47,11 @@ a.detailsactionlinkbutton:hover {
     color: lightcyan;
     margin: 0px auto 0px auto;
 }
-.btn-default{
-    color: black;
-    background-color: antiquewhite;
+.btn-default {
+    color: white;
+    font-size: 15px;
+    font-weight:bold;
+    background-color: #337ab7;
     border-radius: 1.5em;
 }
 .btn-primary{
@@ -69,14 +71,14 @@ a.detailsactionlinkbutton:hover {
 
 }
 .smallbtn{
-    background-color: whitesmoke;
+    background-color: honeydew;
     border-radius: 1em;
     padding: 5px;
     color: black;
 }
 .smallbtn:hover{
     background-color: gray;
-    color: black;
+    color: lightgreen;
 }
 .navbar{
     background-color: transparent;

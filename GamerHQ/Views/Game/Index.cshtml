@@ -18,7 +18,7 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CreatedUtc)
-        </th>
+        </th >
         <th></th>
     </tr>
 
@@ -36,7 +36,7 @@
         <td>
             @Html.ActionLink("Edit", "Edit", new {  id=item.GameID } , htmlAttributes: new { @class = "refreshpagebtn btn btn-default smallbtn" }) 
             @Html.ActionLink("Details", "Details", new { id = item.GameID }, htmlAttributes: new { @class = "refreshpagebtn btn btn-default smallbtn" }) 
-            @Html.ActionLink("Delete", "Delete", new { id = item.GameID }, htmlAttributes: new { @class = "refreshpagebtn btn btn-default smallbtn" })
+            @Html.ActionLink("Delete", "Delete", new { id = item.GameID }, htmlAttributes: new { @class = "deletebtn btn btn-default smallbtn" })
         </td>
     </tr>
 }

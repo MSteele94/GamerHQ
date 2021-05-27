@@ -68,7 +68,7 @@
   <ItemGroup>
     <Compile Include="Classes\Game.cs" />
     <Compile Include="Classes\JoiningTable.cs" />
-    <Compile Include="Classes\PlatformEnum.cs" />
+    <Compile Include="Classes\Enums.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Migrations\202105111513116_InitialCreate.cs" />
